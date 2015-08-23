@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+	Student Name: Aanchal Goel (aanchug@deakin.edu.au)
+	Student Id: 214182928
+	Page Name: Home page
+	Page Description: The home page shows the navigation to take the user to the rest of the website
+-->
+<html>
+   <head>
+   	  <!-- Pag Title -->
+      <title>Delhi Diner Restaurant</title>
+      <!-- Include jquery scripts and css -->
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" type="text/css" />
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+      <!-- Include the contact.css that will change the background colour of the title bar -->
+      <link rel="stylesheet" href="contact.css" type="text/css" />
+      <link rel="stylesheet" href="style.css" type="text/css" />
+
+	  <!-- The scripts to view the video retrieved from
+	       http://demos.jquerymobile.com/1.2.1/docs/pages/popup/popup-iframes.html
+	       on 22 August 2015
+	  -->
+      <script>
+		$( document ).on( "pageinit", function() {
+			$( "#popupVideo iframe" )
+				.attr( "width", 0 )
+				.attr( "height", 0 );
+
+			$( "#popupVideo" ).on({
+				popupbeforeposition: function() {
+					var size = scale( 497, 298, 15, 1 ),
+						w = size.width,
+						h = size.height;
+
+					$( "#popupVideo iframe" )
+						.attr( "width", w )
+						.attr( "height", h );
+				},
+				popupafterclose: function() {
+					$( "#popupVideo iframe" )
+						.attr( "width", 0 )
+						.attr( "height", 0 );
+				}
+			});
+		});
+
+		function scale( width, height, padding, border ) {
+		    var scrWidth = $( window ).width() - 30,
+		        scrHeight = $( window ).height() - 30,
+		        ifrPadding = 2 * padding,
+		        ifrBorder = 2 * border,
+		        ifrWidth = width + ifrPadding + ifrBorder,
+		        ifrHeight = height + ifrPadding + ifrBorder,
+		        h, w;
+
+		    if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+		        w = ifrWidth;
+		        h = ifrHeight;
+		    } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
+		        w = scrWidth;
+		        h = ( scrWidth / ifrWidth ) * ifrHeight;
+		    } else {
+		        h = scrHeight;
+		        w = ( scrHeight / ifrHeight ) * ifrWidth;
+		    }
+
+		    return {
+		        'width': w - ( ifrPadding + ifrBorder ),
+		        'height': h - ( ifrPadding + ifrBorder )
+		    };
+		};
+      </script>
+   </head>
+   <body>
+      <!-- Start the main page -->
+      <div data-role="page" id="home" data-theme="c">
+         <!-- Start page content -->
+         <div data-role="content">
+         		<!-- The video is played here -->
+				<div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+					<iframe src="https://www.youtube.com/v/16HguDueCUM" width="497" height="298" seamless></iframe>
+				</div>
+
+
+            <!-- The customheader div is linked to the delhi diner logo -->
+            <div id="customheader">
+            </div>
+            <div class="cl">
+               <ul data-role="listview" data-inset="true" >
+                  <li>
+                     <a href="about.html" data-transition="slide">
+                        <img src="images/developer.png"/>
+                        <h3>About Delhi Diner</h3>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="menu.html" data-transition="slide">
+                        <img src="images/menu.jpg"/>
+                        <h3>Menu and Recipes</h3>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="contact.html" data-transition="slide">
+                        <img src="images/contact.png"/>
+                        <h3>Contact</h3>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="feedback.html"  data-transition="slide">
+                        <img src="images/feedback.gif"/>
+                        <h3>Feedback</h3>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="developer.html"  data-transition="slide">
+                        <img src="images/developer.png"/>
+                        <h3>Developer</h3>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="tel:0412212312"  data-transition="slide">
+                        <img src="images/contact.png"/>
+                        <h3>Click-to-call</h3>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#popupVideo" data-rel="popup" data-position-to="window" data-transition="slidefade">
+                        <img src="images/video.png"/>
+                        <h3>Our TV Advertisement</h3>
+                     </a>
+                  </li>
+                </ul>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

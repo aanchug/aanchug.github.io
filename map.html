@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+	Student Name: Aanchal Goel (aanchug@deakin.edu.au)
+	Student Id: 214182928
+	Page Name: Location/Map page
+	Page Description: Map to the location of the restaurant
+-->
+<html>
+   <head>
+      <title>Delhi Diner Restaurant</title>
+      <!-- Include jquery css and javascript -->
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <!-- Include Google Maps API -->
+      <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <link rel="stylesheet" href="contact.css" />
+      <script src="contact.js"></script>
+      <style>
+         #map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }
+      </style>
+      <script>
+			 /*
+				Reference:
+				http://demos.jquerymobile.com/1.4.0/map-geolocation/#map-page
+				Accessed on 22 August 2015
+			 */
+
+			 $( document ).on( "pageinit", "#map-page", function() {
+			 var defaultLatLng = new google.maps.LatLng(-37.815962, 144.971434);  // 100 Flinders Street
+				 drawMap(defaultLatLng);
+
+			 function drawMap(latlng) {
+			 var myOptions = {
+			 zoom: 15,
+			 center: latlng,
+			 mapTypeId: google.maps.MapTypeId.ROADMAP
+			 };
+
+			 var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+			 var marker = new google.maps.Marker({
+			 position: latlng,
+			 map: map,
+			 title: "Delhi Diner!"
+			 });
+			 }
+
+         });
+      </script>
+   </head>
+   <body>
+   	  <!-- Start main page -->
+      <div data-role="page" id="map-page" data-url="map-page">
+         <!-- Show header with home and back links -->
+         <div data-role="header">
+            <a href="index.html" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+            <h2>Delhi Diner Map</h2>
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+         </div>
+         <!-- This div will show the map -->
+         <div role="main" class="ui-content" id="map-canvas">
+            <!-- map loads here... -->
+         </div>
+      </div>
+   </body>
+</html>

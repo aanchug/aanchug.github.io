@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+	Student Name: Aanchal Goel (aanchug@deakin.edu.au)
+	Student Id: 214182928
+	Page Name: Menu Page
+	Page Description: Display the categorised menu (entreees, non-vegetarian and vegetarian)
+-->
+<html>
+   <head>
+   	  <!-- Pag Title -->
+      <title>Delhi Diner Restaurant</title>
+      <!-- Include jquery scripts and css -->
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" type="text/css" />
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+      <!-- Include the contact.css that will change the background colour of the title bar -->
+      <link rel="stylesheet" href="contact.css" type="text/css" />
+      <link rel="stylesheet" href="style.css" type="text/css" />
+   </head>
+   <body>
+      <!-- Start main page -->
+      <div data-role="page" id="menu">
+         <!-- Header with back and home link -->
+         <div data-role="header">
+            <a href="index.html" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+            <h1>Our Menu</h1>
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+         </div>
+         <!-- Main content -->
+         <div data-role="content">
+            <!-- Choice list -->
+            <div class="cl">
+               <!-- Unordered list that shows the categories -->
+               <ul data-role="listview" data-inset="true" >
+                  <li role="data-divider">
+                     <img src="images/entree.jpg"/>
+                     <h3>Entrees</h3>
+                  </li>
+                  <li>
+                     <a href="samosa.html" data-transition="slidefade">
+                        <h4>Samosa Chaat</h4>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="papdi.html" data-transition="slidefade">
+                        <h4>Papdi Chatt</h4>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="dahibhalla.html" data-transition="slidefade">
+                        <h4>Dahi Bhalla Caat</h4>
+                     </a>
+                  </li>
+                  <li role="data-divider">
+                     <img src="images/nonveg.jpg"/>
+                     <h3>Non-Vegetarian</h3>
+                  </li>
+                  <li>
+                     <a href="lamb.html" data-transition="slidefade">
+                        <h4>Lamb Curry</h4>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="chiken.html" data-transition="slidefade">
+                        <h4>Butter Chicken</h4>
+                     </a>
+                  </li>
+                  <li role="data-divider">
+                     <img src="images/sweets.png"/>
+                     <h3>Sweets</h3>
+                  </li>
+                  <li>
+                     <a href="gulab.html" data-transition="slidefade">
+                        <h4>Gulab Jamun</h4>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
